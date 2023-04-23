@@ -4,9 +4,12 @@ export type Props = {
   children: ReactNode;
 };
 
-function Test(props: Props) {
+export default function Title(props: Props) {
   const { children } = props;
-  return <div>{children}</div>;
-}
 
-export default Test;
+  return (
+    <div>
+      <h1>{children}</h1>
+    </div>
+  );
+}

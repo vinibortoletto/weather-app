@@ -1,5 +1,13 @@
+import { Title } from './components';
+
 function App() {
-  return <div>React JavaScript Boilerplate</div>;
+  return (
+    <>
+      <main>
+        <Title>Weather forecast</Title>
+      </main>
+    </>
+  );
 }
 
 export default App;
