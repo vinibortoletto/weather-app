@@ -24,7 +24,9 @@ describe('SearchField | component | unit test', () => {
   it('should call "fetchCityList" when typing in input', async () => {
     (fetchCityList as jest.Mock).mockResolvedValueOnce([MOCK_CITY]);
 
-    const searchField = screen.getByLabelText(/search for a city/i);
+    const searchField: HTMLElement =
+      screen.getByLabelText(/search for a city/i);
+
     fireEvent.change(searchField, { target: { value: MOCK_CITY } });
 
     await waitFor(() => {
@@ -34,7 +36,9 @@ describe('SearchField | component | unit test', () => {
 
   it('should render an empty array when "fetchCityList" returns undefined', async () => {
     (fetchCityList as jest.Mock).mockResolvedValueOnce(undefined);
-    const searchField = screen.getByLabelText(/search for a city/i);
+    const searchField: HTMLElement =
+      screen.getByLabelText(/search for a city/i);
+
     fireEvent.change(searchField, { target: { value: MOCK_CITY } });
 
     await waitFor(() => {
@@ -48,7 +52,9 @@ describe('SearchField | component | unit test', () => {
       throw new Error('Request failed');
     });
 
-    const searchField = screen.getByLabelText(/search for a city/i);
+    const searchField: HTMLElement =
+      screen.getByLabelText(/search for a city/i);
+
     fireEvent.change(searchField, { target: { value: 'error' } });
 
     expect(
