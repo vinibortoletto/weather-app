@@ -6,11 +6,18 @@ describe('SearchField | component | unit test', () => {
     jest.resetAllMocks();
   });
 
-  it('should render a title', () => {
+  it('should render Title component', () => {
     render(<App />);
 
     expect(
-      screen.getByRole('heading', { name: 'Weather forecast' })
+      screen.getByRole('heading', { name: /weather forecast/i })
+    ).toBeInTheDocument();
+  });
+
+  it('should render SearchField component', () => {
+    render(<App />);
+    expect(
+      screen.getByRole('combobox', { name: /search for a city/i })
     ).toBeInTheDocument();
   });
 });
