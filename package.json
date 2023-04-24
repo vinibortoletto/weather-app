@@ -13,8 +13,8 @@
     "test": "jest --maxWorkers=50%",
     "test:watch": "jest --watch --maxWorkers=25%",
     "test:ci": "jest --runInBand",
-    "coverage-test": "jest --coverage --maxWorkers=50%",
-    "coverage-test:watch": "jest --coverage --watch --maxWorkers=25%",
+    "test:coverage": "jest --coverage --maxWorkers=50%",
+    "test:coverage:watch": "jest --coverage --watch --maxWorkers=25%",
     "generate:component": "plop component --plopfile ./generators/plopfile.cjs",
     "generate:page": "plop page --plopfile ./generators/plopfile.cjs",
     "generate:hook": "plop hook --plopfile ./generators/plopfile.cjs"
@@ -23,6 +23,8 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@mui/material": "^5.12.1",
+    "@testing-library/user-event": "^14.4.3",
+    "axios": "^1.3.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
