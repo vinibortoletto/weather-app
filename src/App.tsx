@@ -1,11 +1,11 @@
-import { Searchfield, Title } from './components';
+import { SearchField, Title } from 'components';
 
 function App() {
   return (
     <>
       <main>
         <Title>Weather forecast</Title>
-        <Searchfield />
+        <SearchField />
       </main>
     </>
   );

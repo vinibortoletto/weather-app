@@ -1,2 +1,2 @@
-export * from './Searchfield';
+export * from './SearchField';
 export * from './Title';
