@@ -36,7 +36,7 @@ export const fetchCityList = async (
 };
 
 export const fetchCityWeather = async (
-  cityName: string
+  cityName: string | undefined
 ): Promise<ICityWeather | undefined> => {
   const API_KEY = 'da8e423a0090d2da2834266f3d0848dd';
   const API_ENDPOINT = `https://api.openweathermap.org/data/2.5/weather`;
