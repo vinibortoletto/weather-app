@@ -1,3 +1,4 @@
+import { Typography } from '@mui/material';
 import type { ReactNode } from 'react';
 
 export type Props = {
@@ -8,8 +9,8 @@ export default function Title(props: Props) {
   const { children } = props;
 
   return (
-    <div>
+    <Typography sx={{ textAlign: 'center' }}>
       <h1>{children}</h1>
-    </div>
+    </Typography>
   );
 }
