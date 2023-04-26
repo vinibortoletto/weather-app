@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ICity, ICityResponse } from 'interfaces';
+import { ICity, ICityResponse, ICityWeather } from 'interfaces';
 
 const removeDuplicateCity = (cityList: string[]): string[] => {
   const newCityList: string[] = Array.from(new Set(cityList));
@@ -30,6 +30,22 @@ export const fetchCityList = async (
     );
 
     return removeDuplicateCity(cityList);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const fetchCityWeather = async (
+  cityName: string
+): Promise<ICityWeather | undefined> => {
+  const API_KEY = 'da8e423a0090d2da2834266f3d0848dd';
+  const API_ENDPOINT = `https://api.openweathermap.org/data/2.5/weather`;
+
+  try {
+    const { data } = await axios.get(
+      `${API_ENDPOINT}?q=${cityName}&appid=${API_KEY}&units=metric`
+    );
+    return data;
   } catch (error) {
     console.error(error);
   }
